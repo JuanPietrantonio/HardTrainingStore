@@ -1,24 +1,23 @@
-import Item from "../Item/Item";
-
-import React from 'react'
+import ItemList from "./ItemList";
+import React, {useState, useEffect} from 'react';
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
-import products from "../../data/products";
+import getItemsFromApi from "../../mockService/mockService";
 
 function ItemListContainer() {
+
+  const [productList, setProductList] = useState([]);
+
+  useEffect( () => {
+    getItemsFromApi().then((itemsDB) => {
+      console.log(itemsDB); 
+      setProductList(itemsDB);
+    });
+  }, []);
+
   return (
     <div>
         <FlexWrapper>
-          {
-            products.map ( (product) => (
-                <Item
-                  key = {product.id}
-                  imgurl = {product.thumbnail}
-                  title = {product.title}
-                  price = {product.price}
-                  detail = {product.description}
-                />
-              ))
-          }
+          <ItemList productList={productList}/>
         </FlexWrapper>
     </div>
   )
