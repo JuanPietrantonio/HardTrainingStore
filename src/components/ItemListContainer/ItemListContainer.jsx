@@ -9,7 +9,6 @@ function ItemListContainer() {
 
   useEffect( () => {
     getItemsFromApi().then((itemsDB) => {
-      console.log(itemsDB); 
       setProductList(itemsDB);
     });
   }, []);

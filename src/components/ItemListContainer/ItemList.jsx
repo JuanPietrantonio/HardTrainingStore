@@ -11,11 +11,7 @@ function ItemList(props) {
         props.productList.map ( (product) => (
         <Item
           key = {product.id}
-          imgurl = {product.thumbnail}
-          title = {product.title}
-          price = {product.price}
-          detail = {product.description}
-          stock = {product.stock}
+          product = {product}
           />
          ))
         }

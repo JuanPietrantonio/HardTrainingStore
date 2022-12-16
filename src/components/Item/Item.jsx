@@ -1,9 +1,10 @@
 import "./item.css";
 import Button from "../Button/Button";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
-function Item(props) {
+function Item({product}) {
 
     const [ isFavorite, setIsfavorite] = useState(false);
     function handleFavorite () {
@@ -11,17 +12,21 @@ function Item(props) {
     }
     let classButtonFavorite = isFavorite === true ? "card-favicon favorite" : "card-favicon";
 
+    let urlDetail= `/detalle/${product.id}`;
+
     return (
         <div className="card">
             <button onClick={handleFavorite} className={classButtonFavorite}>♡</button>
             <div className="card-img">
-                <img src={props.imgurl} alt="Product img"></img>
+                <img src={product.thumbnail} alt="Product img"></img>
             </div>
             <div>
-                <h2>{props.title}</h2>
-                <p>{props.detail}</p>
-                <h4 className="priceTag">${props.price}</h4>
-                <Button className="btn">Detalle</Button>
+                <h2>{product.title}</h2>
+                <p>{product.detail}</p>
+                <h4 className="priceTag">${product.price}</h4>
+                <Link to={ urlDetail }>
+                    <Button className="btn">Detalle</Button>
+                </Link>
             </div>
         </div>
     )
