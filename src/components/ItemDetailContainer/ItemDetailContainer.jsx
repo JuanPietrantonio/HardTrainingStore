@@ -1,9 +1,10 @@
 
 import React, {useState, useEffect} from 'react';
-import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import {getSingleItemFromApi} from "../../mockService/mockService";
 import { useParams } from 'react-router-dom';
-import ItemCount from '../ItemCount/ItemCount';
+import ItemDetail from './ItemDetail';
+
+
 
 function ItemDetailContainer() {
 
@@ -16,26 +17,10 @@ function ItemDetailContainer() {
     getSingleItemFromApi(id).then((itemsDB) => {
        setProduct(itemsDB);
     });
-  }, [id, product]);
+  }, [id]);
 
   return (
-    <div>
-        <FlexWrapper>
-            <div>
-                <div className="card">
-                <div className="card-img">
-                    <img src={product.thumbnail} alt="Product img"></img>
-                </div>
-                <div>
-                    <h2>{product.title}</h2>
-                    <p>{product.detail}</p>
-                    <h4 className="priceTag">${product.price}</h4>
-                </div>
-                <ItemCount stock={product.stock}></ItemCount>
-                </div>   
-            </div>;
-        </FlexWrapper>
-    </div>
+    <ItemDetail product={product}/>
   )
 }
 

@@ -2,26 +2,27 @@ import React, {useState} from 'react';
 import Button from '../Button/Button';
 
 
-function ItemCount({stock}) {
-    const [cantidad, setCantidad] = useState(1)
-    function handleIncrement () {
-        if (cantidad < stock)
-        setCantidad(cantidad+1)
+function ItemCount({stock, onAddToCart, text}) {
+    const [count, setCountd] = useState(1)
+    function handleAdd (evt) {
+        if (count < stock)
+        setCountd(count+1)
     };
-    function handleDecrement() {
-        if (cantidad > 1) {
-            setCantidad(cantidad-1)
+    function handleSubstract(evt) {
+        if (count > 1) {
+            setCountd(count-1)
         }
     }
+    
 
 
   return (
     <div>
-        <Button onClick={handleIncrement}>+</Button>
-        <p>{cantidad}</p>
-        <Button onClick={handleDecrement}>-</Button>
+        <Button onClick={handleAdd}>+</Button>
+        <p>{count}</p>
+        <Button onClick={handleSubstract}>-</Button>
 
-
+        <Button onClick={ ()=> onAddToCart(count)}>{text}</Button>
     </div>
   )
 }
