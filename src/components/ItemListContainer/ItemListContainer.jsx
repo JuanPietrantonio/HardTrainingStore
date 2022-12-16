@@ -1,17 +1,24 @@
 import ItemList from "./ItemList";
 import React, {useState, useEffect} from 'react';
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
-import getItemsFromApi from "../../mockService/mockService";
+import getItemsFromApi, { getItemsFromApiByCategory } from "../../mockService/mockService";
+import { useParams } from "react-router-dom";
 
 function ItemListContainer() {
 
   const [productList, setProductList] = useState([]);
+  const {categoryid} = useParams();
 
   useEffect( () => {
-    getItemsFromApi().then((itemsDB) => {
+    if (categoryid)
+     getItemsFromApiByCategory(categoryid).then((itemsDB) => {
       setProductList(itemsDB);
     });
-  }, []);
+    else 
+      getItemsFromApi().then((itemsDB) => {
+        setProductList(itemsDB);
+    });
+   }, [categoryid]);
 
   return (
     <div>
@@ -23,3 +30,4 @@ function ItemListContainer() {
 }
 
 export default ItemListContainer
+

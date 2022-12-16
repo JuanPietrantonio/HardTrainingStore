@@ -10,9 +10,9 @@ function NavBar() {
             <Link to="/">
                 <h3>Mi tienda</h3>
             </Link>
-            <Link to="/detalle">Detalle1</Link>
-            <Link to="/">Detalle2</Link>
-            <Link to="/">Detalle3</Link>
+            <Link to="/category/smartphones">Celulares</Link>
+            <Link to="/category/laptops">Laptops</Link>
+            <Link to="/category/fragrances">Fragancias</Link>
             <CartWidget>🛒</CartWidget>
         </nav>
     )

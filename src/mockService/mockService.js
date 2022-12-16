@@ -291,7 +291,7 @@ function getItemsFromApi(){
   return new Promise ((resolve) => {
     setTimeout(() =>{
       resolve(itemsDB);
-    }, 1000 );
+    }, 500 );
   });
     
 }
@@ -309,7 +309,18 @@ export function getSingleItemFromApi(idParams){
         reject (new Error ("no existe"));
       }
     }
-    , 1000 );
+    , 500 );
+  });
+    
+}
+
+export function getItemsFromApiByCategory(categoryid){
+
+  return new Promise ((resolve) => {
+    setTimeout(() =>{
+      let itemsRequested = itemsDB.filter((item) => item.category === categoryid )
+      resolve(itemsRequested);
+    }, 500 );
   });
     
 }

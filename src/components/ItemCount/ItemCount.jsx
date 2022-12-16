@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 
 
-function ClickCounter(props) {
-    const [cantidad, setCantidad] = useState(1)
+function ItemCount(product) {
+    const [cantidad, setCantidad] = useState(product.stock)
     function handleIncrement () {
         setCantidad(cantidad+1)
     };
     function handlekDecrement() {
-        if (cantidad > 1) {
+        if (cantidad > product.stock) {
             setCantidad(cantidad-1)
         }
     }
@@ -24,4 +24,4 @@ function ClickCounter(props) {
   )
 }
 
-export default ClickCounter
+export default ItemCount
