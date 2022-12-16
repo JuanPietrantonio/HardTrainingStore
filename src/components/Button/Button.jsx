@@ -10,9 +10,9 @@ function Button (props) {
 
     return (
 
-        <button onClick={handleClick} style={colorState} className="btn">
+        <button onClick={props.onClick} style={colorState} className="btn">
             {props.children}
-        </button>
+        </button>   
     )
 }
 
