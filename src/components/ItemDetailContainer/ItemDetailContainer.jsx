@@ -15,7 +15,7 @@ function ItemDetailContainer() {
     getSingleItemFromApi(id).then((itemsDB) => {
        setProduct(itemsDB);
     });
-  }, []);
+  }, [id]);
 
   return (
     <div>
