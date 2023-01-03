@@ -14,7 +14,7 @@ export function CartContextProvider (props) {
                 itemsInCart.count += itemData.count;
                 return itemsInCart;
                 } else {
-                 return itemsInCart;
+                  return itemsInCart;
                 }
             });
             setCart(newCart);
