@@ -1,7 +1,6 @@
 import React from 'react';
 import Item from '../Item/Item';
 import FlexWrapper from '../FlexWrapper/FlexWrapper';
-import Loader from '../Loader/Loader';
 
 
 function ItemList(props) {
@@ -13,7 +12,7 @@ function ItemList(props) {
          <FlexWrapper>
         {
         emptyArray ? 
-        <Loader color="green"/>
+        <h1>Cargando...</h1>
         :
         props.productList.map ( (product) => (
         <Item
