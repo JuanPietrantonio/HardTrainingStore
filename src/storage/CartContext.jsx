@@ -38,7 +38,7 @@ export function CartContextProvider (props) {
 
     /*function clear() {
         aca hacer un setCart y le pasamos un array vacio, asociar la funcion a un boton
-        meter esta funcion y la de arroba en el value
+        meter esta funcion y la de arroba en el valuea
     }*/
 
     const value = { 
