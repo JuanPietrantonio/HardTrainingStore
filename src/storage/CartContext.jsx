@@ -34,9 +34,9 @@ export function CartContextProvider (props) {
         return total;
     }
 
-    /*function remoteItem (itemId){
-        aca ver en mock service como se hizo, si el item hace match con el id del cart entonces lo removemos
-    }*/
+    function remoteItem (itemId){
+        /*aca ver en mock service como se hizo, si el item hace match con el id del cart entonces lo removemos*/
+    }
 
     /*function clear() {
         aca hacer un setCart y le pasamos un array vacio, asociar la funcion a un boton
@@ -47,6 +47,7 @@ export function CartContextProvider (props) {
         cart,
         addToCart,
         totalItemsInCart,
+        remoteItem,
         };   
 
     return (

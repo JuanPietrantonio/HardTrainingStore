@@ -13,7 +13,7 @@ function NavBar() {
             <Link to="/category/smartphones">Celulares</Link>
             <Link to="/category/laptops">Laptops</Link>
             <Link to="/category/fragrances">Fragancias</Link>
-            <CartWidget>🛒</CartWidget>
+            <CartWidget></CartWidget>
             
         </nav>
     )

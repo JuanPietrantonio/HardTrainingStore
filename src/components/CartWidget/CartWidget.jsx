@@ -5,7 +5,15 @@ function CartWidget(props) {
   const {totalItemsInCart} = useContext(cartContext);
 
   return (
-    <div>{props.children}{totalItemsInCart()}</div>
+    <div>
+      <div>🛒</div>
+      {
+      totalItemsInCart() > 0 ? 
+      <span>{totalItemsInCart()}</span>
+      :
+      <></>
+      }
+    </div>
   )
 }
 
