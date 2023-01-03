@@ -1,13 +1,27 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import cartContext from '../../storage/CartContext';
 
 
 
 
-function itemDetail({product}) {
+function ItemDetail({product}) {
+
+    const [isInCart, setIsInCart] = useState(false);
+    const { addToCart } = useContext(cartContext);
 
     function onAddToCart(count){
-        alert(`Agregadas ${count} unidades de ${product.title} al carrito`)
+        alert(`Agregadas ${count} unidades de ${product.title} al carrito`);
+        setIsInCart(true);
+
+        const itemForCart = {
+            ...product,
+            count,
+        };
+
+        addToCart(itemForCart)
+        setIsInCart(true);
+
     }
 
     return (
@@ -21,10 +35,14 @@ function itemDetail({product}) {
                 <p>{product.detail}</p>
                 <h4 className="priceTag">${product.price}</h4>
             </div>
-            <ItemCount onAddToCart={onAddToCart} stock={product.stock} text="Agregar al carrito"></ItemCount>
+            {isInCart ? (
+                <button>Ir al carrito</button>
+              )  : (
+                <ItemCount onAddToCart={onAddToCart} stock={product.stock} text="Agregar al carrito"></ItemCount>
+              )}
             </div>   
         </div>
     )
 }
 
-export default itemDetail
+export default ItemDetail
