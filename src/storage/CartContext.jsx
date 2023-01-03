@@ -13,6 +13,8 @@ export function CartContextProvider (props) {
                 if(itemsInCart.id === itemData.id) {
                 itemsInCart.count += itemData.count;
                 return itemsInCart;
+                } else {
+                 return itemsInCart;
                 }
             });
             setCart(newCart);
