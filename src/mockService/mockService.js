@@ -4,6 +4,7 @@ const itemsDB = [
     title: "iPhone 9",
     price: 649,
     stock: 54,
+    discount: 50,
     category: "smartphones",
     thumbnail: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
     description: "An apple mobile which is nothing like apple",

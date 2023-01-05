@@ -1,8 +1,9 @@
 import ItemList from "./ItemList";
 import React, {useState, useEffect} from 'react';
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
-import getItemsFromApi, { getItemsFromApiByCategory } from "../../mockService/mockService";
+
 import { useParams } from "react-router-dom";
+import { getItemsFromApi, getItemsFromApiByCategory } from "../../services/firebase";
 
 function ItemListContainer() {
 
