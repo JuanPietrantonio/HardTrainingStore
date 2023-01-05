@@ -76,7 +76,7 @@ export async function createBuyOrderFirestore(buyOrderData){
     return(docRef.id)
 }
 
-export async function createBuyOrderFirestoreWithStock(buyOrderData) {
+/*export async function createBuyOrderFirestoreWithStock(buyOrderData) {
     const collectionProductsRef = collection(DB, "products");
     const collectionOrdersRef = collection(DB, "buyorders");
     let batch = writeBatch()
@@ -93,7 +93,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
         batch.update(doc.ref, { stock: stockActualizado })
     })
     batch.commit();
-}
+}*/
 
 
 
