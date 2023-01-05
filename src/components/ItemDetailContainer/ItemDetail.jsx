@@ -12,7 +12,11 @@ function ItemDetail({product}) {
     
 
 
-    const { addToCart } = useContext(cartContext);
+    const { cart, addToCart } = useContext(cartContext);
+
+    let itemInCart = cart.find( item => product.id === item.id)
+    let stock = product.stock;
+    if (itemInCart) stock -=itemInCart.count;
 
     function onAddToCart(count){
         setIsInCart(true);
@@ -39,7 +43,7 @@ function ItemDetail({product}) {
                 <h4 className="priceTag">${product.price}</h4>
             </div>
             {!isInCart ? (
-                <ItemCount onAddToCart={onAddToCart} stock={product.stock} text="Agregar al carrito"></ItemCount>
+                <ItemCount onAddToCart={onAddToCart} stock={stock} text="Agregar al carrito"></ItemCount>
               )  : (
                 <div>
                     <Link to= "/cart">

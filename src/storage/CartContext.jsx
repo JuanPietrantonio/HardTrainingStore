@@ -34,20 +34,30 @@ export function CartContextProvider (props) {
         return total;
     }
 
-    function remoteItem (itemId){
+    function totalPriceInCart(){
+        let totalPrice = 0;
+        cart.forEach((itemInCart) => {
+            totalPrice = totalPrice + itemInCart.count * itemInCart.price;
+        })
+        return totalPrice;
+    }
+
+    
+    function removeItem (itemId){
         /*aca ver en mock service como se hizo, si el item hace match con el id del cart entonces lo removemos*/
     }
 
-    /*function clear() {
-        aca hacer un setCart y le pasamos un array vacio, asociar la funcion a un boton
-        meter esta funcion y la de arroba en el valuea
-    }*/
+    function clear() {
+        setCart([])
+    }
 
     const value = { 
         cart,
         addToCart,
         totalItemsInCart,
-        remoteItem,
+        removeItem,
+        clear,
+        totalPriceInCart,
         };   
 
     return (

@@ -6,10 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from './storage/CartContext';
 import CartView from './components/CartView/CartView';
 
-import { testDataBase } from './services/firebase';
 
 function App() {
-  testDataBase();
   return (
     <div className="App">
       <CartContextProvider>
@@ -20,6 +18,7 @@ function App() {
               <Route path="/category/:categoryid" element={ <ItemListContainer /> } />
               <Route path="/detalle/:id" element={ <ItemDetailContainer /> } />
               <Route path="/cart" element={ <CartView/> } />
+              <Route path="/checkout" element={ <h1>Gracias por tu compra</h1> } />
           </Routes>
         </BrowserRouter>
       </CartContextProvider>
