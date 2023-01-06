@@ -73,7 +73,7 @@ export async function createBuyOrderFirestore(buyOrderData){
     const collectionRef = collection(DB, "buyorders")
     const docRef = await addDoc( collectionRef, buyOrderData);
 
-    return(docRef.id)
+    return docRef.id
 }
 
 /*export async function createBuyOrderFirestoreWithStock(buyOrderData) {

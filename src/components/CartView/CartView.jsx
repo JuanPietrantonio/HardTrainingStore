@@ -33,7 +33,7 @@ function CartView() {
     <div>
         <h1>Este es el contenido de tu carrito</h1>
         {cart.map( cartItem=> (
-            <div>
+            <div key={cartItem.id}>
                 <img src={cartItem.thumbnail} alt={cartItem.title}/>
                 <h3>{cartItem.title}</h3>
                 <h4> ${cartItem.price} </h4>

@@ -8,7 +8,7 @@ function NavBar() {
     return (
         <nav className="nav-menu">  
             <Link to="/">
-                <h3>Mi tienda</h3>
+                <h3>Hard Training Store</h3>
             </Link>
             <Link to="/category/smartphones">Celulares</Link>
             <Link to="/category/laptops">Laptops</Link>
