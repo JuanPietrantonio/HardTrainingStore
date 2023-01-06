@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { createBuyOrderFirestore } from '../../services/firebase';
 import cartContext from '../../storage/CartContext';
 import Button from '../Button/Button';
+import BuyForm from './BuyForm';
 
 function CartView() {
 
@@ -12,13 +13,9 @@ function CartView() {
     if (cart.length === 0 ) return <h1>Carrito Vacio</h1>;
 
 
-    function createBuyOrder(){  
+    function createBuyOrder(userData){  
       const buyData = {
-        buyer : { 
-          name: "comision 37485",
-          phone: "1212313",
-          email: "hola@gmail.com"
-         },
+        buyer : userData,
         items : cart,
         total : totalPriceInCart(),
         date : new Date()
@@ -47,7 +44,9 @@ function CartView() {
         }
         <h4>Total: {totalPriceInCart()}</h4>
         <Button onClick={clear}>Vaciar Carrito</Button>
-        <Button onClick={createBuyOrder}>Finalizaro compra</Button>
+        <Button onClick={createBuyOrder}>Finalizar compra</Button>
+
+        <BuyForm onSubmit={createBuyOrder}/>
     </div>
     
   )
