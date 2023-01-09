@@ -8,7 +8,6 @@ export default function BuyForm(props) {
     phone: "",
   });
 
-  console.log(userData);
 
   function onInputChange(evt) {
     const inputName = evt.target.name;
@@ -48,7 +47,7 @@ export default function BuyForm(props) {
         onInputChange={onInputChange}
       />
 
-      <button onClick={onSubmit}>Crear orden</button>
+      <button onClick={onSubmit}>Finalizar Compra</button>
     </form>
   );
 }

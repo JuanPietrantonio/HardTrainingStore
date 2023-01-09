@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import {getSingleItemFromApi} from "../../services/firebase";
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
+import './itemDetailContainer.css';
+import FlexWrapper from '../FlexWrapper/FlexWrapper';
 
 
 
@@ -31,7 +33,9 @@ function ItemDetailContainer() {
 
 
   return (
-    <ItemDetail product={product}/>
+    <FlexWrapper>
+      <ItemDetail product={product} className= "itemDetailContainer"  />
+      </FlexWrapper>
   )
 }
 

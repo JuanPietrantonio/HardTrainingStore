@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import cartContext from '../../storage/CartContext';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
 
 
@@ -47,10 +48,11 @@ function ItemDetail({product}) {
               )  : (
                 <div>
                     <Link to= "/cart">
-                        <button>Ir al carrito</button>
+                        <Button>Ir al carrito</Button>
                     </Link>
-                    <button>Volver al catalogo</button>
-                    <button>Quitar del carrito</button>
+                    <Link to="/">
+                        <Button>Volver al catalogo</Button>
+                    </Link>
                 </div>
               )}
             </div>   

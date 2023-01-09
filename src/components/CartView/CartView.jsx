@@ -31,7 +31,7 @@ function CartView() {
 
   return (
     <div>
-        <h1>Este es el contenido de tu carrito</h1>
+        <h1>Tus compras</h1>
         {cart.map( cartItem=> (
             <div key={cartItem.id}>
                 <img src={cartItem.thumbnail} alt={cartItem.title}/>
@@ -44,7 +44,7 @@ function CartView() {
         }
         <h4>Total: {totalPriceInCart()}</h4>
         <Button onClick={clear}>Vaciar Carrito</Button>
-        <Button onClick={createBuyOrder}>Finalizar compra</Button>
+        
 
         <BuyForm onSubmit={createBuyOrder}/>
     </div>
