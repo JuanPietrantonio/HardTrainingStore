@@ -1,0 +1,17 @@
+.cart-item {
+    border-bottom-style: double;
+    border-bottom-width: 1px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+    
+}
+
+.cart-item img {
+    max-height: 150px;
+}
+
+button {
+    max-height: 30px;
+}

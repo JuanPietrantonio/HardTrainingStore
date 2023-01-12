@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Button from '../Button/Button';
+import "./itemcount.css";
 
 
 function ItemCount({stock, onAddToCart, text}) {
@@ -17,12 +18,12 @@ function ItemCount({stock, onAddToCart, text}) {
 
 
   return (
-    <div>
-        <Button onClick={handleAdd}>+</Button>
-        <p>{count}</p>
+    <div className='item-count'>
         <Button onClick={handleSubstract}>-</Button>
+        <p>{count}</p>
+        <Button onClick={handleAdd}>+</Button>
 
-        <Button onClick={ ()=> onAddToCart(count)}>{text}</Button>
+        <Button onClick={ ()=> onAddToCart(count)} >{text}</Button>
     </div>
   )
 }

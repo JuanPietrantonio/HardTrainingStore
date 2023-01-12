@@ -8,11 +8,11 @@ function NavBar() {
     return (
         <nav className="nav-menu">  
             <Link to="/">
-                <h3>Hard Training Store</h3>
+                <h1>Hard Training Store</h1>
             </Link>
-            <Link to="/category/smartphones">Celulares</Link>
-            <Link to="/category/laptops">Laptops</Link>
-            <Link to="/category/fragrances">Fragancias</Link>
+            <Link to="/category/protein">Proteinas</Link>
+            <Link to="/category/amino">Amonacidos</Link>
+            <Link to="/category/dumbbells">Pesas</Link>
             <CartWidget></CartWidget>
             
         </nav>

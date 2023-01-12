@@ -4,6 +4,7 @@ import { createBuyOrderFirestore } from '../../services/firebase';
 import cartContext from '../../storage/CartContext';
 import Button from '../Button/Button';
 import BuyForm from './BuyForm';
+import "./cartview.css";
 
 function CartView() {
 
@@ -33,12 +34,12 @@ function CartView() {
     <div>
         <h1>Tus compras</h1>
         {cart.map( cartItem=> (
-            <div key={cartItem.id}>
+            <div key={cartItem.id} className="cart-item">
                 <img src={cartItem.thumbnail} alt={cartItem.title}/>
                 <h3>{cartItem.title}</h3>
                 <h4> ${cartItem.price} </h4>
                 <h4> Cantidad: {cartItem.count} </h4>
-                <Button onClick={()=>{removeItem(cartItem.id)}}>X</Button>
+                <Button className='cart-button' onClick={()=>{removeItem(cartItem.id)}} >X</Button>
             </div>
         ))
         }

@@ -5,7 +5,7 @@ const products = [
       price: 649,
       stock: 54,
       category: "smartphones",
-      thumbnail: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
+      thumbnail: "https://cdn.shopify.com/s/files/1/0599/3683/3741/products/Truemade_vainilla_2lb_600x.jpg?v=1653073724",
       description: "An apple mobile which is nothing like apple",
     },
     {
