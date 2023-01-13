@@ -20,7 +20,7 @@ function Item({product}) {
             <div className="card-img">
                 <img src={product.thumbnail} alt="Product img"></img>
             </div>
-            <div>
+            <div className="card-description">
                 <h2>{product.title}</h2>
                 <p>{product.detail}</p>
                 <h4 className="priceTag">${product.price}</h4>

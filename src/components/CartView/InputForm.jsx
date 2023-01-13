@@ -2,8 +2,8 @@ import React from "react";
 
 function InputForm(props) {
   return (
-    <>
-      <label style={{ width: "100px", marginRight: 4 }}>{props.title}</label>
+    <div className="inputform">
+      <label>{props.title}</label>
       <input
         required={true}
         value={props.value}
@@ -11,7 +11,7 @@ function InputForm(props) {
         type="text"
         onChange={props.onInputChange}
       />
-    </>
+    </div>
   );
 }
 

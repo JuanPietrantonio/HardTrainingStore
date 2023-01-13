@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputForm from "./InputForm";
+import Button from "../Button/Button";
 
 export default function BuyForm(props) {
   const [userData, setUserData] = useState({
@@ -24,7 +25,7 @@ export default function BuyForm(props) {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="buyform">
       <InputForm
         required="true"
         title="Nombre"
@@ -47,7 +48,7 @@ export default function BuyForm(props) {
         onInputChange={onInputChange}
       />
 
-      <button onClick={onSubmit}>Finalizar Compra</button>
+      <Button onClick={onSubmit}>Finalizar Compra</Button>
     </form>
   );
 }

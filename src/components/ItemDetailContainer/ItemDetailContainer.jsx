@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import './itemDetailContainer.css';
 import FlexWrapper from '../FlexWrapper/FlexWrapper';
+import { ThreeDots } from 'react-loader-spinner';
 
 
 
@@ -29,7 +30,17 @@ function ItemDetailContainer() {
       .finally( ()=> setIsLoading(false) )
   }, [id]);
 
-  if (isLoading) return <h1>Cargando...</h1>;
+  if (isLoading) return 
+    <ThreeDots 
+          height="80" 
+          width="80" 
+          radius="9"
+          color="grey" 
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
+          visible={true}
+          />
 
 
   return (

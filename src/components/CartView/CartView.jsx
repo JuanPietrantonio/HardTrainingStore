@@ -5,14 +5,22 @@ import cartContext from '../../storage/CartContext';
 import Button from '../Button/Button';
 import BuyForm from './BuyForm';
 import "./cartview.css";
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
+
 
 function CartView() {
 
     const { cart, removeItem, clear, totalPriceInCart } = useContext(cartContext);
     const navigate = useNavigate();
 
-    if (cart.length === 0 ) return <h1>Carrito Vacio</h1>;
-
+    if (cart.length === 0 ) return (
+    <div>
+      <h1>Carrito Vacio</h1>;
+      <Link to="/">
+            <Button>Volver al catalogo</Button>
+      </Link>
+    </div>)
 
     function createBuyOrder(userData){  
       const buyData = {
@@ -22,7 +30,11 @@ function CartView() {
         date : new Date()
       }
       createBuyOrderFirestore(buyData).then ( orderId => {
-        alert(`Gracias por tu compra, tu id es: ${orderId}` )
+        Swal.fire(
+          'Gracias por tu compra',
+          `Tu id de seguimiento es: ${orderId}`,
+          'success'
+        )
       });
       clear();
       navigate("/checkout/");   
@@ -43,7 +55,7 @@ function CartView() {
             </div>
         ))
         }
-        <h4>Total: {totalPriceInCart()}</h4>
+        <h3>Total: ${totalPriceInCart()}</h3>
         <Button onClick={clear}>Vaciar Carrito</Button>
         
 

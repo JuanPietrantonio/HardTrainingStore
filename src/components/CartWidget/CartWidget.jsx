@@ -7,7 +7,7 @@ function CartWidget(props) {
   const {totalItemsInCart} = useContext(cartContext);
 
   return (
-    <div>
+    <div className='cart-div'>
       <Link to= "/cart" className='cart'>🛒</Link>
       {
       totalItemsInCart() > 0 ? 

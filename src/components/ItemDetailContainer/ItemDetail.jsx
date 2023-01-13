@@ -3,6 +3,7 @@ import ItemCount from '../ItemCount/ItemCount'
 import cartContext from '../../storage/CartContext';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
+import './itemdetail.css';
 
 
 
@@ -40,7 +41,7 @@ function ItemDetail({product}) {
             </div>  
             <div>
                 <h2>{product.title}</h2>
-                <p>{product.detail}</p>
+                <p>{product.description}</p>
                 <h4 className="priceTag">${product.price}</h4>
             </div>
             {!isInCart ? (

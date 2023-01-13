@@ -1,7 +1,9 @@
 .card{
+  display: flex;
+  flex-wrap: wrap;
   position:relative;
   margin: 10px 15px;
-  min-height: 520px;
+  min-height: 500px;
   width: 280px;
   height: 100%;
   border-radius: 4px;
@@ -69,4 +71,9 @@ small{
 
 .offerTag{
   color: #21b276
+}
+
+.card-description {
+  background-color: rgba(195, 195, 9, 0.637);
+  width: 100%;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from '../Item/Item';
 import FlexWrapper from '../FlexWrapper/FlexWrapper';
+import { ThreeDots } from 'react-loader-spinner';
 
 
 function ItemList(props) {
@@ -12,7 +13,16 @@ function ItemList(props) {
          <FlexWrapper>
         {
         emptyArray ? 
-        <h1>Cargando...</h1>
+        <ThreeDots 
+        height="80" 
+        width="80" 
+        radius="9"
+        color="grey" 
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
+        />
         :
         props.productList.map ( (product) => (
         <Item

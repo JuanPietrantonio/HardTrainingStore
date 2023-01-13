@@ -15,3 +15,26 @@
 button {
     max-height: 30px;
 }
+
+.buyform {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 40px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+.buyform input {
+    font-size: 18px;
+}
+
+.inputform {
+    padding: 15px;
+}
+
+.inputform label {
+    padding: 10px;
+}
